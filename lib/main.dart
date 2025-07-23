@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
   final _nameController = TextEditingController();
   final _distanceController = TextEditingController();
   
-  String _selectedType = 'ภูเขา';
+  String _selectedType = 'อื่นๆ';
   String _selectedProvince = 'กรุงเทพมหานคร';
   double _difficulty = 5.0;
   bool _isUnknown = false;
@@ -381,7 +381,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF6750A4).withOpacity(0.1),
+                color: const Color(0xFF6750A4),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
