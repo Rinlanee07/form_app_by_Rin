@@ -1,0 +1,63 @@
+RateMyTripApp (StatelessWidget)
+└── MaterialApp
+    └── HomePage (StatefulWidget)
+        └── Scaffold
+            └── Container [พื้นหลังแบบ Gradient]
+                └── SafeArea
+                    └── Column
+                        ├── _buildHeader()
+                        │   └── Padding
+                        │       └── HeaderSection (StatelessWidget)
+                        │           └── Column
+                        │               ├── Icon (location_on)
+                        │               ├── Text ('RateMyTrip')
+                        │               └── Text ('ชวนคุณรีวิวที่เที่ยวที่น่าจดจำ')
+                        │
+                        └── _buildContent()
+                            └── Expanded
+                                └── Container [พื้นหลังสีขาว มุมโค้งบน]
+                                    └── Column
+                                        ├── SizedBox (สูง 16)
+                                        ├── _buildAddButton()
+                                        │   └── Padding
+                                        │       └── FilledButton.icon (เพิ่มสถานที่ท่องเที่ยว)
+                                        │
+                                        └── _buildLocationsList()
+                                            └── Expanded
+                                                └── (EmptyLocationView หรือ LocationListView)
+                                                    ├── EmptyLocationView (ถ้าไม่มีรายการ)
+                                                    │   └── Center → Column → Icon + Text
+                                                    └── LocationListView (ถ้ามีรายการ)
+                                                        └── ListView.builder
+                                                            └── LocationCard (หลายอัน)
+                                                                └── Card
+                                                                    └── ListTile
+                                                                        ├── leading: CircleAvatar + Icon
+                                                                        ├── title: Text (ชื่อ)
+                                                                        ├── subtitle: Text (ประเภท • จังหวัด)
+                                                                        └── trailing: Column
+                                                                            ├── Row (Icon star + คะแนน)
+                                                                            └── Text (ระดับ)
+
+📦 Dialogs:
+- _showAddLocationDialog()
+  └── AddLocationDialog (StatefulWidget)
+      └── AlertDialog
+          ├── Title (Text)
+          ├── Content: SingleChildScrollView → Form → Column
+          │   ├── NameField (TextFormField)
+          │   ├── TypeDropdown (DropdownButtonFormField)
+          │   ├── ProvinceDropdown (DropdownButtonFormField)
+          │   ├── DistanceField (TextFormField)
+          │   ├── DifficultySlider (Slider)
+          │   └── UnknownCheckbox (CheckboxListTile)
+          └── Actions: TextButton (ยกเลิก), FilledButton (เพิ่ม)
+
+- _showLocationDetails()
+  └── LocationDetailDialog (StatelessWidget)
+      └── AlertDialog
+          ├── Title: Row + Icon + Text
+          ├── Content: Column
+          │   ├── _buildScoreCard(): Container → Row + Text
+          │   └── _buildDetails(): Column → DetailRow
+          └── Actions: TextButton (ลบ), FilledButton (ปิด)
