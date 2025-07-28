@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       'ค้นหาและประเมินสถานที่ท่องเที่ยว',
-                      style: TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.9)),
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ],
                 ),
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                                     margin: const EdgeInsets.only(bottom: 12),
                                     child: ListTile(
                                       leading: CircleAvatar(
-                                        backgroundColor: const Color(0xFF6750A4).withOpacity(0.1),
+                                        backgroundColor: const Color(0xFF6750A4),
                                         child: Icon(_getLocationIcon(location.type), color: const Color(0xFF6750A4)),
                                       ),
                                       title: Text(location.name, style: const TextStyle(fontWeight: FontWeight.bold)),
@@ -263,15 +263,6 @@ class _HomePageState extends State<HomePage> {
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   validator: (value) => value?.isEmpty == true ? 'กรุณากรอกระยะทาง' : null,
-                ),
-                const SizedBox(height: 16),
-                
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'ลิ้งรูปภาพ (ไม่บังคับ)',
-                    border: OutlineInputBorder(),
-                  ),
-                  onChanged: (value) => _imageUrl = value,
                 ),
                 const SizedBox(height: 16),
                 
