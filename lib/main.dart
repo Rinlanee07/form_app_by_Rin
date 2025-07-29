@@ -478,9 +478,7 @@ class _AddLocationDialogState extends State<AddLocationDialog> {
       ],
     );
   }
-}
-
-// --- Widget เมทอดแยกเป็นคลาสใหม่ ---
+}   
 
 class NameField extends StatelessWidget {
   final TextEditingController controller;
