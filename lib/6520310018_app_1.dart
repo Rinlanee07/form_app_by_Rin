@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
       gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [Color.fromARGB(255, 12, 43, 30), Color.fromARGB(255, 71, 122, 94)],
+        colors: [Color.fromARGB(255, 12, 43, 30), Color(0xFFE8DEF8)],
       ),
     );
   }
@@ -661,7 +661,7 @@ class LocationDetailDialog extends StatelessWidget {
   Widget _buildTitle() {
     return Row(
       children: [
-        Icon(_getLocationIcon(location.type), color: const Color.fromARGB(255, 36, 36, 37)),
+        Icon(_getLocationIcon(location.type), color: const Color(0xFF6750A4)),
         const SizedBox(width: 8),
         Expanded(child: Text(location.name)),
       ],
@@ -672,7 +672,7 @@ class LocationDetailDialog extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 80, 107, 133),
+        color: const Color(0xFF6750A4),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
